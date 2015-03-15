@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Rembrant</title>
+		<link href="css/estilos.css" rel="stylesheet">
+		 <meta name="viewport" id="viewport"
+     content="width=device-width, height=device-height,
+     initial-scale=1.0, maximum-scale=1.0,
+     user-scalable=no" />
+		<script src="phonegap.js"></script>
+	</head>
+	<body>
+		<div class="navbar">
+			<img src ="img/atras.png" class="atras" id="atras">
+			<img src ="img/buscar-gris.png" class="icono" id="buscar">
+			<img src ="img/campana-gris.png" class="icono" id="buscar">
+			<img src ="img/perfil-blanco.png" class="icono" id="buscar">
+		</div>
+		<br><br><br><br>
+		<div class="contenido centrar">
+			<img src="img/beleño.jpg" class="perfil-foto" ><br>
+			<div class="subir">Subir foto</div>
+			<br><br>
+			<div>
+				<div class="col-3">Nombre: </div>
+				<div class="col-7"><input type="text" class="form-control perfil-input"></div>
+				<div class="col-3">Whatsapp: </div>
+				<div class="col-7"><input type="text" class="form-control perfil-input"></div>
+				<div class="col-3">Facebook: </div>
+				<div class="col-7"><input type="text" class="form-control perfil-input"></div>
+			</div>
+			<br><br>
+			<button class="btn btn-guardar">GUARDAR</button>
+		</div>
+		<br><br>
+		<script src="js/jquery.js"></script>
+		<script  type="text/javascript" language="javascript">
+			document.addEventListener("deviceready", onDeviceReady, false);
+			
+			function ajax(url,data,done,error){
+	            $.ajax({
+	                url: url,
+	                context : document.body,
+	                dataType: "json",
+	                type: "POST",
+	                data: data
+	            }).done(done).error(error);
+	        }
+
+	        function onDeviceReady(){
+				
+			}
+		</script>
+	</body>
+</html>

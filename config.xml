@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.karma"
+        id          = "com.phonegap.rembran"
         version     = "1.0.0" >
 
-    <name>CrowdConfession</name>
+    <name>Rembran</name>
 
     <description>
-        Esta aplicación te permite revelar tus pensamientos y opiniones anónimamente. (Confesionario Virtual) 
+        Esta aplicaciónes un directorio de redes sociales. 
     </description>
 
     <author href="https://build.phonegap.com" email="jsbeleno@gmail.com">
