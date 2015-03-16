@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.rembran"
+        id          = "com.phonegap.rembrant"
         version     = "1.0.0" >
 
-    <name>Rembran</name>
+    <name>Rembrant</name>
 
     <description>
-        Esta aplicaciónes un directorio de redes sociales. 
+        Esta aplicación es un directorio de redes sociales. 
     </description>
-
     <author href="https://build.phonegap.com" email="jsbeleno@gmail.com">
-        Juan Sebastián Beleño Díaz
+        Equipo Rembrant
     </author>
 	
     <access origin="*" />
