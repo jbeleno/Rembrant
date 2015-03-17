@@ -13,13 +13,13 @@
 	<body>
 		<div class="navbar">
 			<img src ="img/logo-blanco.png" class="logo" id="home">
-			<a href="buscar.html"><img src ="img/buscar-gris.png" class="icono" id="buscar"></a>
-			<a href="notificaciones.html"><img src ="img/campana-gris.png" class="icono" id="buscar"></a>
-			<a href="perfil.html"><img src ="img/perfil-gris.png" class="icono" id="buscar"></a>
+			<img src ="img/buscar-gris.png" class="icono" id="buscar">
+			<img src ="img/campana-gris.png" class="icono" id="notificaciones">
+			<img src ="img/perfil-gris.png" class="icono" id="perfil">
 		</div>
 		<div class="contenido">
 			<div class="usuario">
-				<img src="img/oliver.jpg" class="usuario-foto">
+				<img src="img/Oliver.jpg" class="usuario-foto">
 				<div class="usuario-texto enlinea centrar-v">
 					<div class="usuario-nombre">Oliver Fabian Ávila Guerra</div>
 					<div class="usuario-distancia">50 m</div>
@@ -102,7 +102,10 @@
 	        }
 
 	        function onDeviceReady(){
-				
+				$( "#home" ).on( "click", function(){window.location.assign("./datos.html");});
+				$( "#buscar" ).on( "click", function(){window.location.assign("./buscar.html");});
+				$( "#notificaciones" ).on( "click", function(){window.location.assign("./notificaciones.html");});
+				$( "#perfil" ).on( "click", function(){window.location.assign("./perfil.html");});
 			}
 		</script>
 	</body>

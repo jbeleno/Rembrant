@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="navbar">
-			<a href="datos.html"><img src ="img/atras.png" class="atras" id="atras"></a>
+			<img src ="img/atras.png" class="atras" id="atras">
 			<img src ="img/buscar-blanco.png" class="icono" id="buscar">
 			<div class="col-7 right">
 				<input type="text" class="form-control buscar-input">
@@ -92,7 +92,7 @@
 	        }
 
 	        function onDeviceReady(){
-				
+				$( "#atras" ).on( "click", function(){window.location.assign("./datos.html");});
 			}
 		</script>
 	</body>

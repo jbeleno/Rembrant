@@ -12,10 +12,10 @@
 	</head>
 	<body>
 		<div class="navbar">
-			<a href="datos.html"><img src ="img/atras.png" class="atras" id="atras"></a>
-			<a href="buscar.html"><img src ="img/buscar-gris.png" class="icono" id="buscar"></a>
-			<a href="notificaciones.html"><img src ="img/campana-gris.png" class="icono" id="buscar"></a>
-			<img src ="img/perfil-blanco.png" class="icono icono-blanco" id="buscar">
+			<img src ="img/atras.png" class="atras" id="atras">
+			<img src ="img/buscar-gris.png" class="icono" id="buscar">
+			<img src ="img/campana-gris.png" class="icono" id="notificaciones">
+			<img src ="img/perfil-blanco.png" class="icono" id="perfil">
 		</div>
 		<br>
 		<div class="contenido centrar">
@@ -49,7 +49,10 @@
 	        }
 
 	        function onDeviceReady(){
-				
+				$( "#atras" ).on( "click", function(){window.location.assign("./datos.html");});
+				$( "#buscar" ).on( "click", function(){window.location.assign("./buscar.html");});
+				$( "#notificaciones" ).on( "click", function(){window.location.assign("./notificaciones.html");});
+				$( "#perfil" ).on( "click", function(){window.location.assign("./perfil.html");});
 			}
 		</script>
 	</body>

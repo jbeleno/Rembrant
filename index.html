@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="splash-content centrar">
-			<a href="datos.html"><img src="img/logo.png" class="logo-splash"></a><br>
+			<img src="img/logo.png" class="logo-splash"><br>
 			Un gran número de personas para agregar a Whatsapp y Facebook.
 		</div>
 		<br><br>
@@ -21,7 +21,8 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			function onDeviceReady(){
-				$( "#home" ).on( "click", function(){window.location.assign("./index.html");});
+				setTimeout(function(){ window.location.assign("./datos.html"); }, 1500);
+				//$( "#home" ).on( "click", function(){window.location.assign("./index.html");});
 			}
 		</script>
 	</body>
