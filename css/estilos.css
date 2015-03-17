@@ -48,28 +48,29 @@ a{
 	float: right;
 	width: 32px;
 	height: 32px;
-	padding: 10px;
-	margin-top: 3px;
+	padding: 14px 10px;
+}
+
+.icono-blanco{
+	background: rgba(0,0,0,0.15);
 }
 
 .atras{
 	width: 32px;
 	height: 32px;
 	padding: 5px;
-	margin-top: 7px;
-	margin-left: 10px;
+	margin-top: 9px;
 }
 
 .logo{
 	width: 48px;
 	height: 48px;
-	padding: 5px;
-	margin-left: 10px;
+	padding: 6px;
+	margin-left: 4px;
 }
 
 hr{
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 12px 0px;
 	border: 0;
 	border-top: 1px solid #ccc;
 }
@@ -138,9 +139,12 @@ hr{
 }
 
 .contenido{
-	padding: 10px;
+	margin-top: 75px;
 }
 
+.usuario{
+	padding: 0px 5px;
+}
 
 .usuario-nombre{
 	font-size: 16px;
@@ -152,8 +156,8 @@ hr{
 }
 
 .usuario-foto{
-	width: 50px;
-	height: 50px;
+	width: 56px;
+	height: 56px;
 	margin: 0px 5px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -172,12 +176,12 @@ hr{
 }
 
 .content-redes{
-	margin-top: 10px;
+	margin-top: 18px;
 }
 
 .perfil-foto{
-	width: 140px;
-	height: 140px;
+	width: 160px;
+	height: 160px;
 	border: 1px solid #dddddd;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -206,7 +210,7 @@ hr{
 }
 
 .col-7{
-	width: 65%;
+	width: 66%;
 	display: inline-block;
 }
 
