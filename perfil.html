@@ -51,19 +51,29 @@
 	            }).done(done).error(error);
 	        }
 
-	        var fbLoginSuccess = function (userData) {
-			    alert("UserInfo: " + JSON.stringify(userData));
-			    facebookConnectPlugin.getAccessToken(function(token) {
-			        alert("Token: " + token);
-			    }, function(err) {
-			        alert("Could not get access token: " + err);
+
+	        function getInfo(){
+	        	facebookConnectPlugin.api("me/", ["email"],
+			    function (result) {
+			        alert("Result: " + JSON.stringify(result));
+			    },
+			    function (error) {
+			       	alert("¡Ups!, al parecer ha ocurrido un error en el inicio de sesión, intenta de nuevo. ");
 			    });
+	        }
+
+	        var fbLoginSuccess = function (userData) {
+	        	var datos = JSON.stringify(userData);
+	        	datos = datos.authResponse;
+			    localStorage.FBuserID = datos.userID;
+			    localStorage.Token = datos.accessToken;
+			    getInfo();
 			}
 
 			var login = function(){
-				facebookConnectPlugin.login(["public_profile", "user_birthday", "email"],
+				facebookConnectPlugin.login(["public_profile", "email"],
 				    fbLoginSuccess,
-				    function (error) { alert("" + error) }
+				    function (error) { alert("¡Ups!, al parecer ha ocurrido un error en el inicio de sesión, intenta de nuevo. "); }
 				);
 			}
 
