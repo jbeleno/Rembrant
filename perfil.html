@@ -19,7 +19,7 @@
 		</div>
 		<br>
 		<div class="contenido centrar">
-			<img src="img/beleno.jpg" class="perfil-foto" ><br>
+			<img src="img/beleno.jpg" class="perfil-foto" id="fb-img"><br>
 			<br><br>
 			<div>
 				<div class="col-3">Usuario: </div>
@@ -31,7 +31,7 @@
 				<div class="col-3redes">
 					<img src="img/fb.png" class="icono-redescol">
 				</div>
-				<div class="colfacebook col-7">Ingresa Mediante Facebook</div>
+				<div id="btn-login" class="colfacebook col-7">Ingresa Mediante Facebook</div>
 			</div>
 			<br><br>
 			<button class="btn btn-guardar">GUARDAR</button>
@@ -51,7 +51,24 @@
 	            }).done(done).error(error);
 	        }
 
+	        var fbLoginSuccess = function (userData) {
+			    alert("UserInfo: " + JSON.stringify(userData));
+			    facebookConnectPlugin.getAccessToken(function(token) {
+			        alert("Token: " + token);
+			    }, function(err) {
+			        alert("Could not get access token: " + err);
+			    });
+			}
+
+			var login = function(){
+				facebookConnectPlugin.login(["public_profile", "user_birthday", "email"],
+				    fbLoginSuccess,
+				    function (error) { alert("" + error) }
+				);
+			}
+
 	        function onDeviceReady(){
+	        	$( "#btn-login" ).on( "click", login);
 				$( "#atras" ).on( "click", function(){window.location.assign("./datos.html");});
 				$( "#buscar" ).on( "click", function(){window.location.assign("./buscar.html");});
 				$( "#notificaciones" ).on( "click", function(){window.location.assign("./notificaciones.html");});

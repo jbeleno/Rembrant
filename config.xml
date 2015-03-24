@@ -22,4 +22,8 @@
 	<preference name="orientation" value="portrait" />
 	
 	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
+	    <param name="APP_ID" value="740082716110925" />
+	    <param name="APP_NAME" value="Rembrant" />
+	</gap:plugin>
 </widget>
