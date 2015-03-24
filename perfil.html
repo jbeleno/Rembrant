@@ -23,7 +23,7 @@
 			<br><br>
 			<div>
 				<div class="col-3">Usuario: </div>
-				<div class="col-7"><input type="text" class="form-control perfil-input" placeholder="Ingresa tu Nombre y Apellidos"></div>
+				<div class="col-7"><input type="text" class="form-control perfil-input" id="nombre" placeholder="Ingresa tu Nombre y Apellidos"></div>
 				<div class="col-3redes">
 					<img src="img/wpp.png" class="icono-redescol">
 				</div>
@@ -53,9 +53,15 @@
 
 
 	        function getInfo(){
-	        	facebookConnectPlugin.api("me/", ["email"],
+	        	facebookConnectPlugin.api(localStorage.userID+"/?fields=id,name,email,gender,link", ["basic_info","email"],
 			    function (result) {
 			        alert("Result: " + JSON.stringify(result));
+			        var datos = JSON.stringify(result);
+			        localStorage.nombre = datos.name;
+			        localStorage.email = datos.email;
+			        localStorage.gender = datos.gender;
+			        localStorage.link = datos.link;
+			        $("#nombre").val(localStorage.nombre);
 			    },
 			    function (error) {
 			       	alert("¡Ups!, al parecer ha ocurrido un error en el inicio de sesión, intenta de nuevo. ");
