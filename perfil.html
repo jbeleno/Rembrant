@@ -53,7 +53,7 @@
 
 
 	        function getInfo(){
-	        	facebookConnectPlugin.api(localStorage.userID+"/?fields=id,name,email,gender,link", ["public_profile","email"],
+	        	facebookConnectPlugin.api("me?fields=id,name,email,gender,link", ["public_profile","email"],
 			    function (result) {
 			        alert("Result: " + JSON.stringify(result));
 			        var datos = JSON.stringify(result);
@@ -64,7 +64,7 @@
 			        $("#nombre").val(localStorage.nombre);
 			    },
 			    function (error) {
-			       	alert("¡Ups!, al parecer ha ocurrido un error en el inicio de sesión, intenta de nuevo. ");
+			       	alert(error);
 			    });
 	        }
 
