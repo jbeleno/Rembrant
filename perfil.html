@@ -38,6 +38,7 @@
 		</div>
 		<br><br>
 		<script src="js/jquery.js"></script>
+		<script src="js/openfb.js"></script>
 		<script  type="text/javascript" language="javascript">
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
@@ -51,39 +52,38 @@
 	            }).done(done).error(error);
 	        }
 
-
-	        function getInfo(){
-	        	facebookConnectPlugin.api("me?fields=id,name,email,gender,link", ["public_profile","email"],
-			    function (result) {
-			        alert("Result: " + JSON.stringify(result));
-			        var datos = JSON.stringify(result);
-			        localStorage.nombre = datos.name;
-			        localStorage.email = datos.email;
-			        localStorage.gender = datos.gender;
-			        localStorage.link = datos.link;
-			        $("#nombre").val(localStorage.nombre);
-			    },
-			    function (error) {
-			       	alert(error);
+	        function getInfo() {
+		        openFB.api({
+		            path: '/me',
+		            success: function(data) {
+		                localStorage.nombre = data.name;
+				        localStorage.email = data.email;
+				        localStorage.gender = data.gender;
+				        localStorage.link = data.link;
+				        localStorage.img = 'http://graph.facebook.com/' + data.id + '/picture?type=large';
+			        	$("#nombre").val(localStorage.nombre);
+			        	$("#fb-img").attr("src", localStorage.img);
+		            },
+		            error: function (error) {
+				       	alert(error);
+				    });
 			    });
-	        }
-
-	        var fbLoginSuccess = function (userData) {
-	        	var datos = JSON.stringify(userData);
-	        	datos = datos.authResponse;
-			    localStorage.FBuserID = datos.userID;
-			    localStorage.Token = datos.accessToken;
-			    getInfo();
-			}
+		    }
 
 			var login = function(){
-				facebookConnectPlugin.login(["public_profile", "email"],
-				    fbLoginSuccess,
-				    function (error) { alert("¡Ups!, al parecer ha ocurrido un error en el inicio de sesión, intenta de nuevo. "); }
-				);
+				openFB.login(
+                function(response) {
+                    if(response.status === 'connected') {
+                    	localStorage.token = response.authResponse.token;
+                    	getInfo();
+                    } else {
+                        alert("¡Ups!, al parecer ha ocurrido un error en el inicio de sesión, intenta de nuevo. ");
+                    }
+                }, {scope: 'email,public_profile,user_friends'});
 			}
 
 	        function onDeviceReady(){
+	        	openFB.init({appId: '740082716110925'});
 	        	$( "#btn-login" ).on( "click", login);
 				$( "#atras" ).on( "click", function(){window.location.assign("./datos.html");});
 				$( "#buscar" ).on( "click", function(){window.location.assign("./buscar.html");});
