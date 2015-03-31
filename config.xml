@@ -22,4 +22,5 @@
 	<preference name="orientation" value="portrait" />
 	
 	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
 </widget>
