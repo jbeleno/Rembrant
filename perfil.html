@@ -66,14 +66,15 @@
 		            },
 		            error: function (error) {
 				       	alert(error);
-				    });
-			    });
+				    }
+				});
 		    }
 
 			var login = function(){
 				openFB.login(
                 function(response) {
                     if(response.status === 'connected') {
+                    	alert('entró');
                     	localStorage.token = response.authResponse.token;
                     	getInfo();
                     } else {
